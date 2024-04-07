@@ -1,7 +1,7 @@
 const LicensesPage = () => {
   return <div>
-    <p>Included licenses and reference works at inflamous.eu</p>
-    ----
+    <h4>Included licenses and referenced works at <a href="https://www.inflamous.eu">inflamous.eu</a></h4>
+    - - - -
     <br/><br/>
     <div>
       The BSD Zero Clause License (0BSD)<br /><br />

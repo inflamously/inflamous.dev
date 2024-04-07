@@ -1,16 +1,11 @@
-import { graphql, Link, PageProps, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import "./header.css"
 
 export const Header = () => {
   const data = useStaticQuery(query)
 
   return <header
-    style={{
-      margin: `0 auto`,
-      padding: `var(--space-4) var(--size-gutter)`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`
-    }}
+    className="header"
   >
     <Link to="/">{data.appJson?.title}</Link>
   </header>

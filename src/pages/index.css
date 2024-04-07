@@ -1,0 +1,27 @@
+:root {
+    --element-padding: 1rem;
+    --element-padding-half: 0.5rem;
+
+    --border-color: var(--color-secondary);
+    --border-width: 1px;
+
+    --font-weight-default: 500;
+
+    --color-primary: rgb(255, 201, 74);
+    --color-secondary: rgb(220, 149, 87);
+    --color-tertiary: rgb(121, 84, 88);
+    --color-quaternary: rgb(69, 63, 120);
+
+    color: var(--color-primary);
+    background-color: var(--color-quaternary);
+}
+
+body {
+    margin: 0
+}
+
+a {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-default);
+    text-decoration-thickness: 2px;
+}

@@ -1,0 +1,5 @@
+.layout {
+    padding: var(--element-padding) 0;
+    padding-top: 0;
+    margin: 0 5vw;
+}

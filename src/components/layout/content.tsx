@@ -1,17 +1,13 @@
-import { ReactNode } from "react"
+import "./content.css"
 
-const Content = (props: { children: ReactNode }) => {
-  const { children } = props
-
-  return <div
-    style={{
-      margin: `0 auto`,
-      maxWidth: `var(--size-content)`,
-      padding: `var(--size-gutter)`
-    }}
-  >
-    <main>{children}</main>
-  </div>
+const Content = () => {
+  return (
+    <div className="content">
+      <main>
+        <div>Test</div>
+      </main>
+    </div>
+  )
 }
 
 export default Content

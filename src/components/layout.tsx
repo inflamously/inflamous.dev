@@ -1,17 +1,14 @@
 import { Header } from "./layout/header"
-import { ReactNode } from "react"
 import Content from "./layout/content"
 import Footer from "./layout/footer"
+import "../pages/layout.css"
 
-const Layout = (props: { children: ReactNode }) => {
-  const { children } = props
+const Layout = () => {
   return (
-    <div>
+    <div className="layout">
       <Header />
-      <Content>
-        {children}
-      </Content>
-      <Footer/>
+      <Content />
+      <Footer />
     </div>
   )
 }

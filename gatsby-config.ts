@@ -3,11 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
+import { GatsbyConfig } from "gatsby"
 
-/**
- * @type {import("gatsby").GatsbyConfig}
- */
-module.exports = {
+const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-image`,
@@ -25,22 +23,27 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/icon.png` // This path is relative to the root of the site.
-      }
+        icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/src/assets/`
-      }
+        path: `${__dirname}/src/assets/`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data/`
-      }
+        path: `${__dirname}/src/data/`,
+      },
     },
-  ]
+    {
+      resolve: `gatsby-transformer-remark`,
+    },
+  ],
 }
+
+module.exports = config

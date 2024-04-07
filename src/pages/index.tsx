@@ -1,12 +1,8 @@
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import "./index.css"
 
 const IndexPage = () => {
-  return <Layout>
-    <div>
-      test
-    </div>
-  </Layout>
+  return <Layout></Layout>
 }
 
 export default IndexPage

@@ -1,17 +1,22 @@
 import { Link } from "gatsby"
+import "./footer.css"
+import { FooterHints } from "./footer-hints"
 
 const Footer = () => {
-  return <footer
-    style={{
-      marginTop: `var(--space-5)`,
-      fontSize: `var(--font-sm)`
-    }}
-  >
-    © {new Date().getFullYear()} &middot; Built with
-    {` `}
-    <a href="https://www.gatsbyjs.com">Gatsby</a>
-    <Link to="/licenses"></Link>
-  </footer>
+  return (
+    <footer
+      className="footer"
+      style={{
+        marginTop: `var(--space-5)`,
+        fontSize: `var(--font-sm)`,
+      }}
+    >
+      <FooterHints />
+      <br />
+      <br />
+      <Link to="/licenses">License</Link>
+    </footer>
+  )
 }
 
 export default Footer
