@@ -1,6 +1,6 @@
 const LicensesPage = () => {
   return <div>
-    <h4>Included licenses and referenced works at <a href="https://www.inflamous.eu">inflamous.eu</a></h4>
+    <h4>Included licenses and referenced works at <a href="https://www.inflamous.dev">inflamous.dev</a></h4>
     - - - -
     <br/><br/>
     <div>

@@ -1445,6 +1445,7 @@ type MarkdownRemark = Node & {
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly parent: Maybe<Node>;
+  readonly path: Maybe<Scalars['String']>;
   readonly rawMarkdownBody: Maybe<Scalars['String']>;
   readonly tableOfContents: Maybe<Scalars['String']>;
   readonly timeToRead: Maybe<Scalars['Int']>;
@@ -1756,6 +1757,7 @@ type PotraceTurnPolicy =
 type Query = {
   readonly allAppJson: AppJsonConnection;
   readonly allDirectory: DirectoryConnection;
+  readonly allDocuments: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
   readonly allFile: FileConnection;
   readonly allImageSharp: ImageSharpConnection;
   readonly allMarkdownRemark: MarkdownRemarkConnection;
@@ -2879,6 +2881,18 @@ type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: n
 type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: string | null, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
+
+type MarkdownDocumentQueryVariables = Exact<{
+  id: InputMaybe<Scalars['String']>;
+}>;
+
+
+type MarkdownDocumentQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly slug: string | null } | null } | null };
+
+type PagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<{ readonly path: string }> } };
 
 
 }

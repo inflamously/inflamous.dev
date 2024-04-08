@@ -14,7 +14,7 @@ const InflamousHint = () => (
     <span className="footer__hint">
       Designed&nbsp;&&nbsp;Programmed&nbsp;by
     </span>
-    &nbsp;<a href="https://github.com/inflamously/inflamous.eu">Inflamous</a>
+    &nbsp;<a href="https://github.com/inflamously/inflamous.dev">Inflamous</a>
   </>
 )
 

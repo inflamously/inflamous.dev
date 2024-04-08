@@ -1,5 +1,5 @@
 {
-  "name": "inflamous.eu",
+  "name": "inflamous.dev",
   "private": true,
   "description": "<TODO>",
   "version": "1.0.0",
@@ -27,6 +27,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "develop:clean": "npm run clean && npm run develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
@@ -35,9 +36,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/inflamously/inflamous.eu"
+    "url": "https://github.com/inflamously/inflamous.dev"
   },
   "bugs": {
-    "url": "https://github.com/inflamously/inflamous.eu/issues"
+    "url": "https://github.com/inflamously/inflamous.dev/issues"
   }
 }
