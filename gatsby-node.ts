@@ -25,7 +25,8 @@ const createResolvers: GatsbyNode["createResolvers"] = ({
       path: {
         type: "String",
         resolve: async (source, _args, _context, _info) => {
-          return source.fileAbsolutePath
+          const path: string = source.fileAbsolutePath
+          return path.substring(path.search("documents/"))
         },
       },
     },

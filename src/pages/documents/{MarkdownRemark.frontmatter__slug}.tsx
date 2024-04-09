@@ -2,22 +2,20 @@ import { graphql, PageProps, useStaticQuery } from "gatsby"
 import Layout from "../../components/layout"
 
 const DocumentTemplate = (props: PageProps) => {
-  const data = useStaticQuery(query)
-
   return (
     <Layout>
       <div
         dangerouslySetInnerHTML={{
-          __html: data?.markdownRemark?.html ?? "",
+          __html: props.data.markdownRemark.html ?? "<p>Document not found</p>",
         }}
       />
     </Layout>
   )
 }
 
-const query = graphql`
-  query MarkdownDocument($id: String) {
-    markdownRemark(id: { eq: $id }) {
+export const query = graphql`
+  query ($frontmatter__slug: String) {
+    markdownRemark(frontmatter: { slug: { eq: $frontmatter__slug } }) {
       html
       frontmatter {
         title

@@ -2882,12 +2882,10 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: st
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
 
-type MarkdownDocumentQueryVariables = Exact<{
-  id: InputMaybe<Scalars['String']>;
-}>;
+type LicensesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type MarkdownDocumentQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly slug: string | null } | null } | null };
+type LicensesQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly name: string, readonly childMarkdownRemark: { readonly html: string | null } | null }> } };
 
 type PagesQueryVariables = Exact<{ [key: string]: never; }>;
 

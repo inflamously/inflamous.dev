@@ -43,6 +43,9 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-transformer-remark`,
     },
+    {
+      resolve: `gatsby-transformer-textfile`,
+    },
   ],
 }
 
