@@ -10,5 +10,17 @@ jobs:
   deploy-inflamous-dev:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo 'Test'"
-      - run: "ls -la"
+      - name : Checkout Repository
+        run: "git clone https://github.com/inflamously/inflamous.dev.git"
+      - name: Checkout master
+        working-directory: inflamous.dev
+        run: "git checkout master"
+      - name: Install dependencies
+        working-directory: inflamous.dev
+        run: "npm install"
+      - name: Include plugin package - gatsby-transformer-textfile
+        working-directory: inflamous.dev
+        run: "npm link ./src/plugins/gatsby-transformer-textfile"
+      - name: Build Gatsby Project
+        working-directory: inflamous.dev
+        run: "npm run build"
