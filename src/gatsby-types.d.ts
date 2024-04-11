@@ -1766,6 +1766,7 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
+  readonly allTextFileTestNode: TextFileTestNodeConnection;
   readonly appJson: Maybe<AppJson>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
@@ -1776,6 +1777,7 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
+  readonly textFileTestNode: Maybe<TextFileTestNode>;
 };
 
 
@@ -1856,6 +1858,14 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
+};
+
+
+type Query_allTextFileTestNodeArgs = {
+  filter: InputMaybe<TextFileTestNodeFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<TextFileTestNodeSortInput>>>;
 };
 
 
@@ -2061,6 +2071,15 @@ type Query_sitePluginArgs = {
   resolve: InputMaybe<StringQueryOperatorInput>;
   ssrAPIs: InputMaybe<StringQueryOperatorInput>;
   version: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_textFileTestNodeArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  test: InputMaybe<StringQueryOperatorInput>;
 };
 
 type Site = Node & {
@@ -2836,6 +2855,124 @@ type StringQueryOperatorInput = {
   readonly ne: InputMaybe<Scalars['String']>;
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']>>>;
   readonly regex: InputMaybe<Scalars['String']>;
+};
+
+type TextFileTestNode = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly test: Maybe<Scalars['String']>;
+};
+
+type TextFileTestNodeConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<TextFileTestNodeEdge>;
+  readonly group: ReadonlyArray<TextFileTestNodeGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<TextFileTestNode>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type TextFileTestNodeConnection_distinctArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+
+type TextFileTestNodeConnection_groupArgs = {
+  field: TextFileTestNodeFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type TextFileTestNodeConnection_maxArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+
+type TextFileTestNodeConnection_minArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+
+type TextFileTestNodeConnection_sumArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+type TextFileTestNodeEdge = {
+  readonly next: Maybe<TextFileTestNode>;
+  readonly node: TextFileTestNode;
+  readonly previous: Maybe<TextFileTestNode>;
+};
+
+type TextFileTestNodeFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly test: InputMaybe<FieldSelectorEnum>;
+};
+
+type TextFileTestNodeFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly test: InputMaybe<StringQueryOperatorInput>;
+};
+
+type TextFileTestNodeGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<TextFileTestNodeEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<TextFileTestNodeGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<TextFileTestNode>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type TextFileTestNodeGroupConnection_distinctArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+
+type TextFileTestNodeGroupConnection_groupArgs = {
+  field: TextFileTestNodeFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type TextFileTestNodeGroupConnection_maxArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+
+type TextFileTestNodeGroupConnection_minArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+
+type TextFileTestNodeGroupConnection_sumArgs = {
+  field: TextFileTestNodeFieldSelector;
+};
+
+type TextFileTestNodeSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly test: InputMaybe<SortOrderEnum>;
 };
 
 type TransformOptions = {

@@ -10,7 +10,9 @@ const shouldOnCreateNode: GatsbyNode["shouldOnCreateNode"] = ({
     }
   >
 }) => {
-  return node?.internal?.mediaType === `text/plain` ?? false
+  console.log(node)
+
+  return true;
 }
 
 const onCreateNode: GatsbyNode["onCreateNode"] = async ({
@@ -20,9 +22,21 @@ const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   createNodeId,
   createContentDigest,
 }) => {
+  const {createNode, createParentChildLink} = actions
+
   const transformText = () => {}
 
-  console.log(node)
+  // console.log(node)
+
+  createNode({
+    id: "test-id",
+    test: "test",
+    parent: node.id,
+    internal: {
+      type: "TextFileTestNode",
+      contentDigest: createContentDigest("test"),
+    }
+  })
 }
 
 exports.shouldOnCreateNode = shouldOnCreateNode

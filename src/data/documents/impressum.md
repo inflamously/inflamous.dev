@@ -16,7 +16,7 @@ Karlstr. 18<br />
 
 <h2>Kontakt</h2>
 <p>
-Telefon: <a href="tel:023011878113">0230 11878113</a><br />
+Telefon: <a href="tel:023011878113">0230.11878113</a><br />
 E-Mail: <a href="mailto:mail@inflamous.dev">mail@inflamous.dev</a>
 </p>
 

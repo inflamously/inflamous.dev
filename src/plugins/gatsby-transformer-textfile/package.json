@@ -2,14 +2,18 @@
   "name": "gatsby-transformer-textfile",
   "version": "1.0.0",
   "description": "<TODO>",
-  "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
     "gatsby": "^5.13.3",
     "gatsby-source-filesystem": "^5.13.1"
   },
+  "keywords": [
+    "gatsby",
+    "gatsby-transformer"
+  ],
   "author": "Inflamous (David Dembinski)",
   "license": "MIT"
 }
