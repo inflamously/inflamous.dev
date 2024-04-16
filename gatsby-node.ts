@@ -59,11 +59,5 @@ const createResolvers: GatsbyNode["createResolvers"] = ({
   })
 }
 
-const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({
-  actions,
-  schema,
-}) => {}
-
-exports.createSchemaCustomization = createSchemaCustomization
 exports.createResolvers = createResolvers
 exports.onCreateBabelConfig = onCreateBabelConfig
