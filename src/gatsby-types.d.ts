@@ -1766,7 +1766,7 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
-  readonly allTextFileTestNode: TextFileTestNodeConnection;
+  readonly allTextFile: TextFileConnection;
   readonly appJson: Maybe<AppJson>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
@@ -1777,7 +1777,7 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
-  readonly textFileTestNode: Maybe<TextFileTestNode>;
+  readonly textFile: Maybe<TextFile>;
 };
 
 
@@ -1861,11 +1861,11 @@ type Query_allSitePluginArgs = {
 };
 
 
-type Query_allTextFileTestNodeArgs = {
-  filter: InputMaybe<TextFileTestNodeFilterInput>;
+type Query_allTextFileArgs = {
+  filter: InputMaybe<TextFileFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<TextFileTestNodeSortInput>>>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<TextFileSortInput>>>;
 };
 
 
@@ -2074,12 +2074,15 @@ type Query_sitePluginArgs = {
 };
 
 
-type Query_textFileTestNodeArgs = {
+type Query_textFileArgs = {
+  absolutePath: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
+  content: InputMaybe<StringQueryOperatorInput>;
+  ext: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  name: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
-  test: InputMaybe<StringQueryOperatorInput>;
 };
 
 type Site = Node & {
@@ -2857,122 +2860,134 @@ type StringQueryOperatorInput = {
   readonly regex: InputMaybe<Scalars['String']>;
 };
 
-type TextFileTestNode = Node & {
+type TextFile = Node & {
+  readonly absolutePath: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
+  readonly content: Maybe<Scalars['String']>;
+  readonly ext: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly name: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
-  readonly test: Maybe<Scalars['String']>;
 };
 
-type TextFileTestNodeConnection = {
+type TextFileConnection = {
   readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<TextFileTestNodeEdge>;
-  readonly group: ReadonlyArray<TextFileTestNodeGroupConnection>;
+  readonly edges: ReadonlyArray<TextFileEdge>;
+  readonly group: ReadonlyArray<TextFileGroupConnection>;
   readonly max: Maybe<Scalars['Float']>;
   readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<TextFileTestNode>;
+  readonly nodes: ReadonlyArray<TextFile>;
   readonly pageInfo: PageInfo;
   readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
 };
 
 
-type TextFileTestNodeConnection_distinctArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileConnection_distinctArgs = {
+  field: TextFileFieldSelector;
 };
 
 
-type TextFileTestNodeConnection_groupArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileConnection_groupArgs = {
+  field: TextFileFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
-type TextFileTestNodeConnection_maxArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileConnection_maxArgs = {
+  field: TextFileFieldSelector;
 };
 
 
-type TextFileTestNodeConnection_minArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileConnection_minArgs = {
+  field: TextFileFieldSelector;
 };
 
 
-type TextFileTestNodeConnection_sumArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileConnection_sumArgs = {
+  field: TextFileFieldSelector;
 };
 
-type TextFileTestNodeEdge = {
-  readonly next: Maybe<TextFileTestNode>;
-  readonly node: TextFileTestNode;
-  readonly previous: Maybe<TextFileTestNode>;
+type TextFileEdge = {
+  readonly next: Maybe<TextFile>;
+  readonly node: TextFile;
+  readonly previous: Maybe<TextFile>;
 };
 
-type TextFileTestNodeFieldSelector = {
+type TextFileFieldSelector = {
+  readonly absolutePath: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
+  readonly content: InputMaybe<FieldSelectorEnum>;
+  readonly ext: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
-  readonly test: InputMaybe<FieldSelectorEnum>;
 };
 
-type TextFileTestNodeFilterInput = {
+type TextFileFilterInput = {
+  readonly absolutePath: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly content: InputMaybe<StringQueryOperatorInput>;
+  readonly ext: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
-  readonly test: InputMaybe<StringQueryOperatorInput>;
 };
 
-type TextFileTestNodeGroupConnection = {
+type TextFileGroupConnection = {
   readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<TextFileTestNodeEdge>;
+  readonly edges: ReadonlyArray<TextFileEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<TextFileTestNodeGroupConnection>;
+  readonly group: ReadonlyArray<TextFileGroupConnection>;
   readonly max: Maybe<Scalars['Float']>;
   readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<TextFileTestNode>;
+  readonly nodes: ReadonlyArray<TextFile>;
   readonly pageInfo: PageInfo;
   readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
 };
 
 
-type TextFileTestNodeGroupConnection_distinctArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileGroupConnection_distinctArgs = {
+  field: TextFileFieldSelector;
 };
 
 
-type TextFileTestNodeGroupConnection_groupArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileGroupConnection_groupArgs = {
+  field: TextFileFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
-type TextFileTestNodeGroupConnection_maxArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileGroupConnection_maxArgs = {
+  field: TextFileFieldSelector;
 };
 
 
-type TextFileTestNodeGroupConnection_minArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileGroupConnection_minArgs = {
+  field: TextFileFieldSelector;
 };
 
 
-type TextFileTestNodeGroupConnection_sumArgs = {
-  field: TextFileTestNodeFieldSelector;
+type TextFileGroupConnection_sumArgs = {
+  field: TextFileFieldSelector;
 };
 
-type TextFileTestNodeSortInput = {
+type TextFileSortInput = {
+  readonly absolutePath: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
+  readonly content: InputMaybe<SortOrderEnum>;
+  readonly ext: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
+  readonly name: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
-  readonly test: InputMaybe<SortOrderEnum>;
 };
 
 type TransformOptions = {
@@ -3018,6 +3033,13 @@ type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: n
 type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: string | null, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
+
+type LicenseBlockQueryQueryVariables = Exact<{
+  filename: Scalars['String'];
+}>;
+
+
+type LicenseBlockQueryQuery = { readonly allTextFile: { readonly nodes: ReadonlyArray<{ readonly name: string | null, readonly content: string | null }> } };
 
 type LicensesQueryVariables = Exact<{ [key: string]: never; }>;
 
