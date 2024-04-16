@@ -52,8 +52,6 @@ const createResolvers: GatsbyNode["createResolvers"] = ({
             return entry
           })
 
-          console.log(entries)
-
           return entries
         },
       },

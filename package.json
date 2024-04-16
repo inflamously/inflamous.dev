@@ -1,5 +1,5 @@
 {
-  "name": "inflamous.dev",
+  "name": "nflamously.dev",
   "private": true,
   "description": "<TODO>",
   "version": "1.0.0",
@@ -36,9 +36,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/inflamously/inflamous.dev"
+    "url": "https://github.com/inflamously/nflamously.dev"
   },
   "bugs": {
-    "url": "https://github.com/inflamously/inflamous.dev/issues"
+    "url": "https://github.com/inflamously/nflamously.dev/issues"
   }
 }

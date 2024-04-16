@@ -1,4 +1,4 @@
-name: inflamous.dev-ci
+name: nflamously.dev-ci
 
 on:
   push:
@@ -11,16 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name : Checkout Repository
-        run: "git clone https://github.com/inflamously/inflamous.dev.git"
+        run: "git clone https://github.com/inflamously/nflamously.dev.git"
       - name: Checkout master
-        working-directory: inflamous.dev
+        working-directory: nflamously.dev
         run: "git checkout master"
       - name: Install dependencies
-        working-directory: inflamous.dev
+        working-directory: nflamously.dev
         run: "npm install"
       - name: Include plugin package - gatsby-transformer-textfile
-        working-directory: inflamous.dev
+        working-directory: nflamously.dev
         run: "npm link ./src/plugins/gatsby-transformer-textfile"
       - name: Build Gatsby Project
-        working-directory: inflamous.dev
+        working-directory: nflamously.dev
         run: "npm run build"

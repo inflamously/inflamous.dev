@@ -1,4 +1,3 @@
-import { ReactNode } from "react"
 import { graphql, PageProps } from "gatsby"
 
 const LicenseBreak = () => <>
@@ -35,7 +34,7 @@ const LicensesPage = () => {
     <div>
       <h4>
         Included licenses and referenced works at{" "}
-        <a href="https://www.inflamous.dev">inflamous.dev</a>
+        <a href="https://www.nflamously.dev">nflamously.dev</a>
       </h4>
       <LicenseBreak />
       <div>
