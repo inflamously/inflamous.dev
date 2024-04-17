@@ -45,6 +45,9 @@ const config: GatsbyConfig = {
     },
     {
       resolve: `gatsby-source-textfile`,
+      options: {
+        leafDirectory: "licenses",
+      }
     },
   ],
 }

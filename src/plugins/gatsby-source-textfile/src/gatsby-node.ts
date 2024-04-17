@@ -1,26 +1,28 @@
-import { GatsbyNode } from "gatsby"
+import {
+  CreateNodeArgs,
+  GatsbyNode,
+  PluginCallback,
+  PluginOptions,
+} from "gatsby"
 import { readFileSync } from "fs"
 
-const shouldOnCreateNode: GatsbyNode["shouldOnCreateNode"] = ({
+export const shouldOnCreateNode: GatsbyNode["shouldOnCreateNode"] = ({
   node,
 }: {
-  node: Record<
-    string,
-    {
-      mediaType: string
-    }
-  >
-}) => node.internal.mediaType === "text/plain"
+  node: Record<"internal", { mediaType: string }>
+}): boolean => {
+  return node?.internal?.mediaType === "text/plain"
+}
 
-const onCreateNode: GatsbyNode["onCreateNode"] = async ({
-  node,
-  actions,
-  loadNodeContent,
-  createNodeId,
-  createContentDigest,
-}) => {
+export const onCreateNode: GatsbyNode["onCreateNode"] = async (
+  { node, actions, createNodeId, createContentDigest }: CreateNodeArgs,
+  options: PluginOptions
+) => {
   const { createNode, createParentChildLink } = actions
   const { absolutePath, name, id, parent, ext } = node
+  const { leafDirectory } = options
+
+  console.log("processing plugin with options", options)
 
   console.log("processing node with id: ", id)
 
@@ -35,6 +37,10 @@ const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   }
 
   console.log("reading file")
+
+  if (leafDirectory) {
+    // TODO: Query only from leaf directory
+  }
 
   const textData = readFileSync(absolutePath, {
     encoding: "utf8",
@@ -55,6 +61,3 @@ const onCreateNode: GatsbyNode["onCreateNode"] = async ({
     },
   })
 }
-
-exports.shouldOnCreateNode = shouldOnCreateNode
-exports.onCreateNode = onCreateNode

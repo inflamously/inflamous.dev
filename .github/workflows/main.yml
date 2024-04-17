@@ -18,9 +18,9 @@ jobs:
       - name: Install dependencies
         working-directory: nflamously.dev
         run: "npm install"
-      - name: Include plugin package - gatsby-transformer-textfile
+      - name: Include plugin package - gatsby-source-textfile
         working-directory: nflamously.dev
-        run: "npm link ./src/plugins/gatsby-transformer-textfile"
+        run: "npm link ./src/plugins/gatsby-source-textfile"
       - name: Build Gatsby Project
         working-directory: nflamously.dev
         run: "npm run build"

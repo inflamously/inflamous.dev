@@ -6,8 +6,6 @@ const LicenseBreak = () => <>
   <br />
   <br /></>
 
-
-
 export const licenseQuery = graphql`
   query Licenses {
     allFile(filter: { sourceInstanceName: { eq: "licenses" } }) {
@@ -21,7 +19,9 @@ export const licenseQuery = graphql`
   }
 `
 
-const LicensesPage = () => {
+const LicensesPage = (props: PageProps) => {
+  console.log(props)
+
   return (
     <div>
       <h4>

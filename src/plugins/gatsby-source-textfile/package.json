@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-textfile",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Processes .txt files found via gatsby-source-filesystem and loads its content into a graphlql node.",
   "scripts": {
     "build": "tsc"
