@@ -9,11 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.onCreateNode = exports.shouldOnCreateNode = void 0;
 const fs_1 = require("fs");
-const shouldOnCreateNode = ({ node, }) => node.internal.mediaType === "text/plain";
-const onCreateNode = (_a) => __awaiter(void 0, [_a], void 0, function* ({ node, actions, loadNodeContent, createNodeId, createContentDigest, }) {
+const shouldOnCreateNode = ({ node, }) => {
+    var _a;
+    return ((_a = node === null || node === void 0 ? void 0 : node.internal) === null || _a === void 0 ? void 0 : _a.mediaType) === "text/plain";
+};
+exports.shouldOnCreateNode = shouldOnCreateNode;
+const onCreateNode = (_a, options_1) => __awaiter(void 0, [_a, options_1], void 0, function* ({ node, actions, createNodeId, createContentDigest }, options) {
     const { createNode, createParentChildLink } = actions;
     const { absolutePath, name, id, parent, ext } = node;
+    const { leafDirectory } = options;
+    console.log("processing plugin with options", options);
     console.log("processing node with id: ", id);
     if (!id ||
         (id === null || id === void 0 ? void 0 : id.length) <= 0 ||
@@ -23,6 +30,9 @@ const onCreateNode = (_a) => __awaiter(void 0, [_a], void 0, function* ({ node, 
         return;
     }
     console.log("reading file");
+    if (leafDirectory) {
+        // TODO: Query only from leaf directory
+    }
     const textData = (0, fs_1.readFileSync)(absolutePath, {
         encoding: "utf8",
     });
@@ -40,5 +50,4 @@ const onCreateNode = (_a) => __awaiter(void 0, [_a], void 0, function* ({ node, 
         },
     });
 });
-exports.shouldOnCreateNode = shouldOnCreateNode;
 exports.onCreateNode = onCreateNode;
