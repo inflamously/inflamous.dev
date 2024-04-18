@@ -1,0 +1,26 @@
+name: nflamously.dev-ci
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy-inflamous-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Checkout Repository
+        run: "git clone https://github.com/inflamously/nflamously.dev.git"
+      - name: Checkout master
+        working-directory: nflamously.dev
+        run: "git checkout master"
+      - name: Install dependencies
+        working-directory: nflamously.dev
+        run: "npm install"
+      - name: Include plugin package - gatsby-source-textfile
+        working-directory: nflamously.dev
+        run: "npm link ./src/plugins/gatsby-source-textfile"
+      - name: Build Gatsby Project
+        working-directory: nflamously.dev
+        run: "npm run build"
