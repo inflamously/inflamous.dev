@@ -8,11 +8,12 @@ const LicenseBreak = () => <>
 
 export const licenseQuery = graphql`
   query Licenses {
-    allFile(filter: { sourceInstanceName: { eq: "licenses" } }) {
-      nodes {
-        name
-        childMarkdownRemark {
-          html
+    allTextFile {
+      edges {
+        node {
+          leafDirectory
+          name
+          content
         }
       }
     }

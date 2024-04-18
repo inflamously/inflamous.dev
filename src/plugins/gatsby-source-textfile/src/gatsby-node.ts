@@ -5,6 +5,7 @@ import {
   PluginOptions,
 } from "gatsby"
 import { readFileSync } from "fs"
+import { dirname, basename } from "path"
 
 export const shouldOnCreateNode: GatsbyNode["shouldOnCreateNode"] = ({
   node,
@@ -39,7 +40,10 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = async (
   console.log("reading file")
 
   if (leafDirectory) {
-    // TODO: Query only from leaf directory
+    const parentDirectory = basename(dirname(absolutePath))
+    if (parentDirectory !== leafDirectory) {
+      return
+    }
   }
 
   const textData = readFileSync(absolutePath, {
@@ -54,6 +58,7 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = async (
     name,
     ext,
     content: textData,
+    leafDirectory: leafDirectory ?? null,
     parent,
     internal: {
       type: "TextFile",

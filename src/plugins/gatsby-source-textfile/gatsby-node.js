@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.onCreateNode = exports.shouldOnCreateNode = void 0;
 const fs_1 = require("fs");
+const path_1 = require("path");
 const shouldOnCreateNode = ({ node, }) => {
     var _a;
     return ((_a = node === null || node === void 0 ? void 0 : node.internal) === null || _a === void 0 ? void 0 : _a.mediaType) === "text/plain";
@@ -31,7 +32,10 @@ const onCreateNode = (_a, options_1) => __awaiter(void 0, [_a, options_1], void 
     }
     console.log("reading file");
     if (leafDirectory) {
-        // TODO: Query only from leaf directory
+        const parentDirectory = (0, path_1.basename)((0, path_1.dirname)(absolutePath));
+        if (parentDirectory !== leafDirectory) {
+            return;
+        }
     }
     const textData = (0, fs_1.readFileSync)(absolutePath, {
         encoding: "utf8",
@@ -43,6 +47,7 @@ const onCreateNode = (_a, options_1) => __awaiter(void 0, [_a, options_1], void 
         name,
         ext,
         content: textData,
+        leafDirectory: leafDirectory !== null && leafDirectory !== void 0 ? leafDirectory : null,
         parent,
         internal: {
             type: "TextFile",

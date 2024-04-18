@@ -2081,6 +2081,7 @@ type Query_textFileArgs = {
   ext: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  leafDirectory: InputMaybe<StringQueryOperatorInput>;
   name: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
 };
@@ -2867,6 +2868,7 @@ type TextFile = Node & {
   readonly ext: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly leafDirectory: Maybe<Scalars['String']>;
   readonly name: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
 };
@@ -2923,6 +2925,7 @@ type TextFileFieldSelector = {
   readonly ext: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly leafDirectory: InputMaybe<FieldSelectorEnum>;
   readonly name: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
 };
@@ -2934,6 +2937,7 @@ type TextFileFilterInput = {
   readonly ext: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly leafDirectory: InputMaybe<StringQueryOperatorInput>;
   readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
 };
@@ -2986,6 +2990,7 @@ type TextFileSortInput = {
   readonly ext: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
+  readonly leafDirectory: InputMaybe<SortOrderEnum>;
   readonly name: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
 };
@@ -3034,17 +3039,10 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: st
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
 
-type LicenseBlockQueryQueryVariables = Exact<{
-  filename: Scalars['String'];
-}>;
-
-
-type LicenseBlockQueryQuery = { readonly allTextFile: { readonly nodes: ReadonlyArray<{ readonly name: string | null, readonly content: string | null }> } };
-
 type LicensesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type LicensesQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly name: string, readonly childMarkdownRemark: { readonly html: string | null } | null }> } };
+type LicensesQuery = { readonly allTextFile: { readonly edges: ReadonlyArray<{ readonly node: { readonly leafDirectory: string | null, readonly name: string | null, readonly content: string | null } }> } };
 
 type PagesQueryVariables = Exact<{ [key: string]: never; }>;
 
