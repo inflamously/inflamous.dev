@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import {Roboto} from "next/font/google";
 import "./globals.css";
 import {ReactNode} from "react";
-import {PageProps} from "@/_utilities/types";
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -19,13 +18,12 @@ export const metadata: Metadata = {
     }]
 };
 
-const RootLayout = (props: { children: ReactNode; } & PageProps) => {
-    const {children, params} = props;
-    const {lang} = props?.params
-
+const RootLayout = (props: { children: ReactNode; }) => {
+    const {children} = props;
+    const {lang} = (props as unknown as { params: { lang: string } })?.params ?? {lang: "en"}
     return (
-        <html lang={lang ?? 'en'}>
-        <body className={`${roboto.className} p-8`}>{children}</body>
+        <html>
+        <body className={`${roboto.className}`}>{children}</body>
         </html>
     );
 }

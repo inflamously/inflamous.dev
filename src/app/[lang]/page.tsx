@@ -1,12 +1,14 @@
 // @ts-ignore
 import Layout from "@/app/[lang]/layout";
+import {PageProps} from "@/_utilities/page.model";
+import Header from "./header";
 
-export default function Page(props: { params: { lang: string } }) {
+export default function Page(props: PageProps) {
     const {params} = props
 
     return <Layout>
-        <main className="">
-            <p>Test / Lang: {params.lang}</p>
+        <main>
+            <Header/>
         </main>
     </Layout>
 }

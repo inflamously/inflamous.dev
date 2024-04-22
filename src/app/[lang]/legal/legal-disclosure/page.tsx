@@ -1,5 +1,5 @@
 import {getLocaleDictionary} from "@/translations";
-import {PageProps} from "@/_utilities/types";
+import {PageProps} from "@/_utilities/page.model";
 import {existsSync, promises as fs} from 'fs'
 import {join} from 'path'
 import LicenseBlock from "@/app/[lang]/legal/legal-disclosure/license-block";
