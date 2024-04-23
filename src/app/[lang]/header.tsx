@@ -20,8 +20,7 @@ export default function Header() {
         <HeaderList>
             <HeaderItem>
                 <Image
-                    className={"ml-4"}
-                    src="/images/logo.png" alt="nflamously.dev logo" width="160" height="64"/>
+                    className={"ml-4"} src="/images/logo.png" alt="nflamously.dev logo" width="160" height="64"/>
             </HeaderItem>
         </HeaderList>
     </nav>

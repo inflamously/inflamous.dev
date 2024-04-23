@@ -2,7 +2,7 @@ import {getLocaleDictionary} from "@/translations";
 import {PageProps} from "@/_utilities/page.model";
 import {existsSync, promises as fs} from 'fs'
 import {join} from 'path'
-import LicenseBlock from "@/app/[lang]/legal/legal-disclosure/license-block";
+import LicenseBlock from "@/app/[lang]/legal/licenses/license-block";
 
 async function readLicenseFilepaths() {
     try {
