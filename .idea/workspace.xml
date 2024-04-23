@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c7f1f60e-ef32-4fe9-9f98-64d0e148f83a" name="Changes" comment="feat: delete everything." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/nflamously-dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2fICwC5qPqTSyw84SG4UxgstbVg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Dockerfile nflamously-app.executor": "Run",
+    "Docker.Dockerfile nflamously-check.executor": "Run",
+    "Docker.Dockerfile nflamously-prepare.executor": "Run",
+    "Docker.Dockerfile nflamously-security.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/remix-nflamously",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "F:/Programming/TypeScriptDev/Projects/nflamously.dev/public/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.build:prod.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.start:dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "F:\\Programming\\TypeScriptDev\\Projects\\nflamously.dev\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JSON",
+      "TEXT",
+      "TypeScript"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\public\images" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\src\app" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\src\app\[lang]\legal" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\public" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\public\images" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\public" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\src" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\src\app\[lang]\legal\disclosure\_licenses" />
+      <recent name="F:\Programming\TypeScriptDev\Projects\nflamously.dev\src\app\[lang]" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Dockerfile nflamously-app" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="nodelts-alphine-3.18_nflamously-app" />
+          <option name="buildCliOptions" value="--target nflamously-app" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile nflamously-check" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="nflamously-app_nflamously-check" />
+          <option name="buildCliOptions" value="--target nflamously-check" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile nflamously-prepare" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="nflamously-app_nflamously-prepare" />
+          <option name="buildCliOptions" value="--target nflamously-prepare" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile nflamously-security" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="nflamously-app_nflamously-security" />
+          <option name="buildCliOptions" value="--target nflamously-security" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build:prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:dev" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="build" run_configuration_type="js.build_tools.npm" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Dockerfile nflamously-app" />
+      <item itemvalue="Docker.Dockerfile nflamously-check" />
+      <item itemvalue="Docker.Dockerfile nflamously-prepare" />
+      <item itemvalue="Docker.Dockerfile nflamously-security" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.start:dev" />
+      <item itemvalue="npm.build:prod" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build:prod" />
+        <item itemvalue="Docker.Dockerfile nflamously-security" />
+        <item itemvalue="Docker.Dockerfile nflamously-prepare" />
+        <item itemvalue="Docker.Dockerfile nflamously-check" />
+        <item itemvalue="Docker.Dockerfile nflamously-app" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7f1f60e-ef32-4fe9-9f98-64d0e148f83a" name="Changes" comment="" />
+      <created>1713479440302</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713479440302</updated>
+      <workItem from="1713479441282" duration="3905000" />
+      <workItem from="1713483723267" duration="55000" />
+      <workItem from="1713483802069" duration="3000" />
+      <workItem from="1713520570834" duration="21378000" />
+      <workItem from="1713572046874" duration="81000" />
+      <workItem from="1713572139211" duration="1948000" />
+      <workItem from="1713623555947" duration="14229000" />
+      <workItem from="1713695824054" duration="17336000" />
+      <workItem from="1713809596288" duration="725000" />
+      <workItem from="1713810843999" duration="4860000" />
+      <workItem from="1713902274210" duration="2967000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: initial setup of nextjs app of nflamously">
+      <option name="closed" value="true" />
+      <created>1713483637724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713483637724</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: initial setup of nextjs app of nflamously">
+      <option name="closed" value="true" />
+      <created>1713483771228</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713483771228</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: initial setup of nextjs app of nflamously">
+      <option name="closed" value="true" />
+      <created>1713657048391</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713657048391</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: initial setup of nextjs app of nflamously">
+      <option name="closed" value="true" />
+      <created>1713717200492</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713717200492</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: initial setup of nextjs app of nflamously">
+      <option name="closed" value="true" />
+      <created>1713721222438</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713721222438</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: configure tailwind some more and add a logo">
+      <option name="closed" value="true" />
+      <created>1713814777067</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713814777067</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: rename legal-disclosure to license">
+      <option name="closed" value="true" />
+      <created>1713906367246</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713906367246</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: delete everything.">
+      <option name="closed" value="true" />
+      <created>1713906554035</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713906554035</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: initial setup of nextjs app of nflamously" />
+    <MESSAGE value="feat: configure tailwind some more and add a logo" />
+    <MESSAGE value="feat: rename legal-disclosure to license" />
+    <MESSAGE value="feat: delete everything." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: delete everything." />
+  </component>
+</project>
