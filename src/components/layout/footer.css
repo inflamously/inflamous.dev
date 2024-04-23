@@ -1,5 +1,0 @@
-.footer {
-    padding: var(--element-padding) var(--element-padding-half);
-    background-color: var(--color-tertiary);
-    border: var(--border-width) solid var(--border-color);
-}
