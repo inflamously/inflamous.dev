@@ -1,0 +1,1 @@
+export const resourcePath = () => './app/.server/resources'

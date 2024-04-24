@@ -3,15 +3,14 @@ import {
     Meta,
     Outlet,
     Scripts,
-    ScrollRestoration,
+    ScrollRestoration, useLoaderData,
 } from "@remix-run/react";
-import type {LinksFunction, MetaFunction} from "@remix-run/node";
-import rootcss from './root.css?url'
+import type {LinksFunction, LoaderFunctionArgs, MetaFunction} from "@remix-run/node";
 import {ReactNode} from "react";
 import {redirect} from "@remix-run/router";
-import {LOCALES} from "~/locales";
-import {PageProps} from "~/page";
-import Header from "~/components/molecule/header";
+import Header from "~/layout/header";
+import tailwind from '~/root.css?url'
+import {LOCALES} from "~/.server/language/locales";
 
 export const meta: MetaFunction = () => {
     return [
@@ -22,19 +21,28 @@ export const meta: MetaFunction = () => {
 export const links: LinksFunction = () => [
     {
         rel: "stylesheet",
-        href: rootcss,
+        href: tailwind,
     }
 ]
 
-export const loader = async (props: PageProps) => {
-    const {params} = props
+export const loader = async (props: LoaderFunctionArgs) => {
+    const {params, request} = props
+    const {headers} = request
 
-    return LOCALES.some((lang) => params?.lang === lang) ? null : redirect('/en')
+    const preferredLanguage = headers.get('accept-language');
+    console.log(preferredLanguage)
+
+    return LOCALES.some((lang) => params?.lang === lang) ? {lang: params?.lang} : redirect('/en')
 }
 
-export function Layout({children}: { children: ReactNode }) {
+export function Layout(props: { children: ReactNode }) {
+    const {lang} = useLoaderData();
+
+    const {children} = props
     return (
-        <html lang="en">
+        <html
+            className={"p-2 bg-quaternary"}
+            lang={lang ?? 'en'}>
         <head>
             <meta charSet="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
