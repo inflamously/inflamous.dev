@@ -10,7 +10,7 @@ import {ReactNode} from "react";
 import {redirect} from "@remix-run/router";
 import Header from "~/layout/header";
 import tailwind from '~/root.css?url'
-import {LOCALES} from "~/.server/language/locales";
+import {LOCALES, resolveNearestLocale} from "~/.server/language/locales";
 
 export const meta: MetaFunction = () => {
     return [
@@ -26,13 +26,11 @@ export const links: LinksFunction = () => [
 ]
 
 export const loader = async (props: LoaderFunctionArgs) => {
-    const {params, request} = props
-    const {headers} = request
+    const {request} = props
 
-    const preferredLanguage = headers.get('accept-language');
-    console.log(preferredLanguage)
+    const {lang} = resolveNearestLocale(request.headers.get('accept-language'));
 
-    return LOCALES.some((lang) => params?.lang === lang) ? {lang: params?.lang} : redirect('/en')
+    return lang ? {lang} : redirect('en')
 }
 
 export function Layout(props: { children: ReactNode }) {
@@ -42,7 +40,7 @@ export function Layout(props: { children: ReactNode }) {
     return (
         <html
             className={"p-2 bg-quaternary"}
-            lang={lang ?? 'en'}>
+            lang={lang ?? 'en-US'}>
         <head>
             <meta charSet="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
