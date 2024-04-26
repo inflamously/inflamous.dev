@@ -7,10 +7,10 @@ import {
 } from "@remix-run/react";
 import {LinksFunction, LoaderFunctionArgs, MetaFunction, redirectDocument} from "@remix-run/node";
 import {ReactNode} from "react";
-import {redirect} from "@remix-run/router";
 import Header from "~/layout/header";
 import tailwind from '~/root.css?url'
-import {LOCALES, resolveNearestLocale, isUrlSupportedLocale} from "~/.server/language/locales";
+import {resolveNearestLocale, isUrlSupportedLocale} from "~/.server/language/locales";
+import Footer from "~/layout/footer";
 
 export const meta: MetaFunction = () => {
     return [
@@ -38,7 +38,11 @@ export const loader = async (props: LoaderFunctionArgs) => {
         return redirectDocument('en')
     }
 
-    return {lang: params?.lang}
+    return {
+        params: {
+            lang: params?.lang ?? 'en',
+        }
+    }
 }
 
 export function Layout(props: { children: ReactNode }) {
@@ -66,8 +70,12 @@ export function Layout(props: { children: ReactNode }) {
 }
 
 export default function App() {
+    const data = useLoaderData();
+    // TODO: Set translation function up const {translate} based on given lang
+    // TODO: Setup a docker container
     return <div>
         <Header/>
         <Outlet/>
+        <Footer/>
     </div>
 }

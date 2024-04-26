@@ -10,6 +10,7 @@ export default {
             'quaternary': '#453F78FF'
         },
         spacing: {
+            zero: '0',
             1: '0.5rem',
             2: '1rem',
             4: '2rem',
