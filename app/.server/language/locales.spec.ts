@@ -40,4 +40,10 @@ describe('Tests locale support', () => {
         expect(lang).toEqual(null)
         expect(lang).not.toEqual('en')
     })
+
+    it('should not use unsupported language', () => {
+        const {lang} = resolveNearestLocale('x')
+        expect(lang).toEqual(null)
+        expect(lang).not.toEqual('en')
+    })
 });

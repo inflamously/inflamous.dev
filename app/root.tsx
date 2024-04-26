@@ -5,12 +5,12 @@ import {
     Scripts,
     ScrollRestoration, useLoaderData,
 } from "@remix-run/react";
-import type {LinksFunction, LoaderFunctionArgs, MetaFunction} from "@remix-run/node";
+import {LinksFunction, LoaderFunctionArgs, MetaFunction, redirectDocument} from "@remix-run/node";
 import {ReactNode} from "react";
 import {redirect} from "@remix-run/router";
 import Header from "~/layout/header";
 import tailwind from '~/root.css?url'
-import {LOCALES, resolveNearestLocale} from "~/.server/language/locales";
+import {LOCALES, resolveNearestLocale, isUrlSupportedLocale} from "~/.server/language/locales";
 
 export const meta: MetaFunction = () => {
     return [
@@ -26,11 +26,19 @@ export const links: LinksFunction = () => [
 ]
 
 export const loader = async (props: LoaderFunctionArgs) => {
-    const {request} = props
-
+    const {params, request} = props
     const {lang} = resolveNearestLocale(request.headers.get('accept-language'));
+    const url = new URL(request.url);
 
-    return lang ? {lang} : redirect('en')
+    if (url.pathname === '/') {
+        return lang ? {lang} : redirectDocument('en')
+    }
+
+    if (!isUrlSupportedLocale(params?.lang ?? '')) {
+        return redirectDocument('en')
+    }
+
+    return {lang: params?.lang}
 }
 
 export function Layout(props: { children: ReactNode }) {

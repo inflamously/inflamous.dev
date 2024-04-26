@@ -17,3 +17,5 @@ export const resolveNearestLocale = (acceptLanguages?: string | null) => {
     );
     return LOCALES.some((lang) => languageLocale?.language === lang) ? {lang: languageLocale?.language ?? null} : {lang: null}
 }
+
+export const isUrlSupportedLocale = (locale: string) => LOCALES.map((locale) => `/${locale}`).some((pathname) => pathname === `/${locale}`)
