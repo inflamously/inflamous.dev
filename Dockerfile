@@ -8,6 +8,7 @@ COPY package*.json ./
 
 FROM setup AS build
 RUN npm ci
-ENV PORT 3000
-EXPOSE 3000
+ENV APP_PORT 80
+ENV APP_HOSTNAME '0.0.0.0'
+EXPOSE 80
 CMD ["node", "server.js"]
