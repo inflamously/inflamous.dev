@@ -8,7 +8,7 @@
 module.exports = {
     // Custom nflamously.dev rules
     rules: {
-        "no-unused-vars": "off"
+        "no-unused-vars": ["off"]
     },
     root: true,
     parserOptions: {

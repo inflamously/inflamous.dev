@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["./express.server.ts"],
+  "exclude": ["app", "node_modules", "public"],
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "./build"
+  }
+}

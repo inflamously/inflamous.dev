@@ -9,8 +9,8 @@ installGlobals();
 /**
  * Global Configuration
  */
-const PORT = process.env.APP_PORT || 3000
-const HOSTNAME = process.env.APP_HOSTNAME || undefined
+const PORT: string | number = process.env.APP_PORT ?? 3000
+const HOSTNAME: string | undefined = process.env.APP_HOSTNAME ?? undefined
 
 /**
  * Express configuration
@@ -26,7 +26,7 @@ app.all("*", createRequestHandler({
     getLoadContext: () => ({}),
 }));
 
-HOSTNAME ? app.listen(PORT, HOSTNAME, () =>
+HOSTNAME ? app.listen(+PORT, HOSTNAME, () =>
     console.log(`Express server listening at http://localhost:${PORT}`)
 ) : app.listen(PORT, () => {
     console.log(`Express server listening at http://localhost:${PORT}`)

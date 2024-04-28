@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
+    "build:express": "tsc -p tsconfig.express.server.json",
+    "build:server": "npm run build && npm run build:express",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "node ./server.js",
+    "start": "cross-env NODE_ENV=production APP_PORT=80 node ./build/express.server.js",
     "test": "jest"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "@remix-run/react": "^2.9.0",
     "@remix-run/serve": "^2.9.0",
     "express": "^4.19.2",
+    "helmet": "^7.1.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -24,12 +27,15 @@
     "@remix-run/dev": "^2.9.0",
     "@swc/core": "^1.5.0",
     "@swc/jest": "^0.2.36",
+    "@types/compression": "^1.7.5",
     "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "autoprefixer": "^10.4.19",
+    "cross-env": "^7.0.3",
     "eslint": "^8.38.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.28.1",
